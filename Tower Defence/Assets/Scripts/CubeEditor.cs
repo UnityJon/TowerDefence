@@ -27,6 +27,8 @@ public class CubeEditor : MonoBehaviour {
         snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
         transform.position = snapPos;
         textMesh = GetComponentInChildren<TextMesh>();
-        textMesh.text = snapPos.x/gridSize + "," + snapPos.z/gridSize;
+        string textLabel = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        textMesh.text = textLabel;
+        gameObject.name = "Cube ("+textLabel+")";
     }
 }
