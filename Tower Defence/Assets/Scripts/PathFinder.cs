@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour {
 
-    Dictionary<Vector2Int, Waypoint> grid=new Dictionary<Vector2Int, Waypoint>();
+    Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Vector2Int[] directions = {Vector2Int.up,Vector2Int.right,Vector2Int.down,Vector2Int.left};
 
     [SerializeField] Waypoint startWaypoint, endWaypoint;
 
@@ -14,7 +15,16 @@ public class PathFinder : MonoBehaviour {
     void Start () {
         LoadBlocks();
         ColorStartAndEnd();
+        ExploreNeighbours();
 	}
+
+    private void ExploreNeighbours()
+    {
+        Vector2Int pos = startWaypoint.GetGridPos();
+        foreach (Vector2Int direction in directions) {
+            print ("Exploring " + (pos+direction));
+        }
+    }
 
     private void LoadBlocks()
     {
