@@ -195,7 +195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4110593963219780, guid: 43ca504701e1d274684aa34b349fd76d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4110593963219780, guid: 43ca504701e1d274684aa34b349fd76d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -220,11 +220,11 @@ Prefab:
     - target: {fileID: 102966528071486350, guid: 43ca504701e1d274684aa34b349fd76d,
         type: 2}
       propertyPath: m_Text
-      value: 3,1
+      value: 3,2
       objectReference: {fileID: 0}
     - target: {fileID: 1644167640312074, guid: 43ca504701e1d274684aa34b349fd76d, type: 2}
       propertyPath: m_Name
-      value: Cube (3,1)
+      value: Cube (3,2)
       objectReference: {fileID: 0}
     - target: {fileID: 4110593963219780, guid: 43ca504701e1d274684aa34b349fd76d, type: 2}
       propertyPath: m_LocalScale.x
@@ -311,6 +311,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114589198022504130, guid: 43ca504701e1d274684aa34b349fd76d,
+        type: 2}
+      propertyPath: startWaypoint
+      value: 
+      objectReference: {fileID: 1332622315}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 43ca504701e1d274684aa34b349fd76d, type: 2}
   m_IsPrefabParent: 0
@@ -362,6 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f39936eb11c73f4584e090ee14a26f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startWaypoint: {fileID: 1332622315}
+  endWaypoint: {fileID: 1562020254}
 --- !u!4 &594600528
 Transform:
   m_ObjectHideFlags: 0
