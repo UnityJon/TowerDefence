@@ -6,7 +6,10 @@ public class Waypoint : MonoBehaviour {
 
     const int gridSize = 10;
     Vector2Int gridPos;
+
+    // Public as is just a data class.
     public bool isExplored = false;
+    public Waypoint previousWaypoint;
 
     // Use this for initialization
     void Start() {

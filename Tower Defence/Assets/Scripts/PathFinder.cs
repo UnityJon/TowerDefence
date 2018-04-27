@@ -49,7 +49,7 @@ public class PathFinder : MonoBehaviour {
                 {
                     queue.Enqueue(checkNext);
                     grid[checkNext].isExplored = true;
-                    print("Exploring " + (checkNext));
+                    grid[checkNext].previousWaypoint = grid[from];
                 }
             }
         }
@@ -68,7 +68,6 @@ public class PathFinder : MonoBehaviour {
             else
             {
                 grid.Add(gridPos, waypoint);
-                waypoint.SetTopColor(Color.cyan);
             }
         }
         print("Loaded " + grid.Count + "Blocks");
