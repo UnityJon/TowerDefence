@@ -10,15 +10,32 @@ public class PathFinder : MonoBehaviour {
     [SerializeField] Waypoint startWaypoint, endWaypoint;
     Queue<Vector2Int> queue = new Queue<Vector2Int>();
     bool isRunning = true;
+    private List<Waypoint> path=new List<Waypoint>();
 
-    // Use this for initialization
-    void Start () {
+    public List<Waypoint> GetPath()
+    {
         LoadBlocks();
-        ColorStartAndEnd();
-        PathFind();
-	}
+        ColorStartAndEnd(); // ToDo : Prob shouldnt be here
+        BreadthFirstSearch();
+        CreatePath();
+        return path;
+    }
 
-    private void PathFind()
+
+    private void CreatePath()
+    {
+        path.Add(endWaypoint);
+        Waypoint previous = endWaypoint.previousWaypoint;
+        while (previous!=startWaypoint)
+        {
+            path.Add(previous);
+            previous = previous.previousWaypoint;
+        }
+        path.Add(startWaypoint);
+        path.Reverse();
+    }
+
+    private void BreadthFirstSearch()
     {
         isRunning = true;
         queue.Clear();
